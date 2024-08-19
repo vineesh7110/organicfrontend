@@ -17,7 +17,7 @@ function CartPage() {
         const fetchCart = async () => {
             try {
                 const userId = '65e4f4abcd720f8ca76196f1';  // Replace with actual user ID
-                const res = await axios.get(`http://localhost:3000/cart/${userId}`);
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/cart/${userId}`);
                 dispatch(setCartItems(res.data.items));
             } catch (error) {
                 console.error('Error fetching cart data:', error);
@@ -29,7 +29,7 @@ function CartPage() {
     const handleRemoveFromCart = async (itemId) => {
         try {
             const userId = '65e4f4abcd720f8ca76196f1';  // Replace with actual user ID
-            await axios.delete(`http://localhost:3000/cart/delete/${itemId}`, { data: { userId } });
+            await axios.delete(`${import.meta.env.VITE_API_URL}/cart/delete/${itemId}`, { data: { userId } });
             dispatch(removeItem({ id: itemId }));
             alert('Item removed from cart successfully!');
         } catch (err) {

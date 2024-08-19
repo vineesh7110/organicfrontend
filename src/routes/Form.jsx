@@ -25,7 +25,7 @@ function FormPage(props) {
         const pincode = form['pincode'].value
         const phone = form['phone'].value
 
-        axios.post('http://localhost:3000/form',{email,country,firstname,lastname,address,apartment,city,state,pincode,phone},{withCredentials:true})
+        axios.post(`${import.meta.env.VITE_API_URL}/form`,{email,country,firstname,lastname,address,apartment,city,state,pincode,phone},{withCredentials:true})
         .then(data=>{
             setsuccess(false)
           const user = (data.data.user)

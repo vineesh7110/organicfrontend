@@ -17,7 +17,7 @@ function ContactPage(props) {
         const phone = form['phone'].value
         const message = form['message'].value
         
-        axios.post('http://localhost:3000/contact',{name,email,phone,message},{withCredentials:true})
+        axios.post(`${import.meta.env.VITE_API_URL}/contact`,{name,email,phone,message},{withCredentials:true})
         .then(data=>{
             setsuccess(false)
           const user = (data.data.user)

@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 export async function loader() {
     try{
-        const res = await axios.get("http://localhost:3000/products")
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/products`)
     const data = res.data
 
     return { data }
@@ -27,7 +27,7 @@ function ProductPage(props) {
     );
 
     useEffect(() => {
-        axios.post("http://localhost:3000/users/verify", {}, { withCredentials: true })
+        axios.post(`${import.meta.env.VITE_API_URL}/users/verify`, {}, { withCredentials: true })
             .then((data) => {
                 console.log("logged in")
             })
@@ -45,7 +45,7 @@ function ProductPage(props) {
     const handleAddToCart = async (products) => {
         try {
             const userId = '65e4f4abcd720f8ca76196f1'; // Replace with actual user ID
-            await axios.post('http://localhost:3000/cart/add', {
+            await axios.post(`${import.meta.env.VITE_API_URL}/cart/add`, {
                 userId,
                 productsId: products._id,
                 quantity: 1,
