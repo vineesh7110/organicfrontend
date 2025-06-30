@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { Form, Navigate, useNavigate } from "react-router-dom";
+import { Form, Navigate, useNavigate,Link } from "react-router-dom";
 import { addUser } from '../features/auth/authSlice';
 
 
@@ -38,7 +38,8 @@ navigate('/login')
 <input className="boder-none mt-2 mb-4 p-2 border-b-2 border-amber-800 focus:outline-none" type="email" name="email" id="email"/>
 <label className='text-amber-800 ' htmlFor="password">Password</label>
 <input className="boder-none mt-2 mb-4 p-2 border-b-2 border-amber-800 focus:outline-none" type="password" name="password" id="password"/>
-<button className="bg-amber-800 text-white rounded-md p-2 font-bold">Login</button>
+<button className="bg-amber-800 text-white rounded-md p-2 font-bold">SIGN IN</button>
+<Link className='flex justify-end items-end underline underline-offset-1 mt-4 text-green-600' to={'/login'} >Login click here</Link>
 </form>
 </section>
 </main>

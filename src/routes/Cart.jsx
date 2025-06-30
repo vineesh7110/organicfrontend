@@ -42,18 +42,19 @@ function CartPage() {
     return (
         <main className='h-full mt-36'>
           
-          <h2 className='text-4xl mb-8 flex justify-center'>HubOrg Cart</h2>
+        <h2 className='text-4xl mb-8 flex justify-center text-amber-700 mt-4 font-semibold p-2'>HubOrg Cart</h2> 
             {cartItems.length === 0 ? (
                 <p className='text-lg'>Your cart is empty.</p>
             ) : (
-                <ul className='space-y-4 ml-56 mr-56' >
+                <ul className='space-y-4 lg:ml-56 lg:mr-56 sm:-ml-56 sm:-mr-56 sm:p-2' >
                     {cartItems.map(item => (
-                        <li key={item._id} className='flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg p-4'>
-                            <img src={item.image} alt={item.name} className='w-24 h-24 md:w-32 md:h-32 object-cover rounded-md mb-4 md:mb-0 md:mr-4' />
+                        <li key={item._id} className='flex flex-col md:flex-row items-center bg-white shadow-lg shadow-amber-800/100 rounded-lg p-4'>
+                           
                             <div className='flex-1'>
+                            <img src={item.image} alt={item.name} className='w-64 h-64 md:w-32 md:h-32 object-cover rounded-md mb-4 md:mb-0 md:mr-4' />
                                 <h3 className='text-xl font-semibold'>{item.title}</h3>
                                 
-                                <p className='text-green-500 font-bold'>{item.price}</p>
+                                <p className='text-amber-800/75 font-bold'>{item.price}</p>
                                 <div className='mt-2'>
                                     <label className='block mb-1'>Quantity:</label>
                                     <input
@@ -74,10 +75,10 @@ function CartPage() {
                     ))}
                 </ul>
             )}
-            <h2 className='text-2xl font-bold mt-8'>Total Amount: ${totalAmount}</h2>
-            <Link to={'/form'}>   
-                <button className=' flex ml-56 mt-8 mb-6 bg-green-600 text-white px-6 py-3 rounded-md'>
-                    Checkout
+            <h2 className='text-2xl font-bold mt-8 p-2'>Total Amount: ${totalAmount}</h2>
+            <Link className='flex items-center justify-center' to={'/form'}>   
+                <button className='flex mt-8 mb-6 bg-amber-600 text-white px-6 py-3 hover:bg-green-700'>
+                    CHECK OUT
                 </button>
             </Link>
         </main>

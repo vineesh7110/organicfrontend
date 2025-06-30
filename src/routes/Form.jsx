@@ -43,7 +43,7 @@ function FormPage(props) {
     return (
         <main className='h-full mt-36'>
 
-            <form className='grid grid-cols-2' onSubmit={handleform}>
+            <form className='grid lg:grid-cols-2 sm:grid-row' onSubmit={handleform}>
 
                 <section >
 

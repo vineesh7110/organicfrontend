@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom";
 export async function loader() {
     try{
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/products`)
+       
     const data = res.data
 
     return { data }

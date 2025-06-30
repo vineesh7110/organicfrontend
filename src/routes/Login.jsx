@@ -33,12 +33,13 @@ function LoginPage(props) {
       <section className="h-full flex flex-col items-center justify-center -mt-8">
       
    <form className="flex flex-col p-8 shadow-lg shadow-amber-800/100 rounded-lg w-80 h-34" onSubmit={handleLogin}>
-   <h1 className='text-center text-amber-800 font-bold text-3xl mb-8 font-mono'>Login</h1>
+   <h1 className='mb-8  flex justify-center items-center'><img className='w-16' src="/id.png" alt="" /></h1>
 <label className='text-amber-800 ' htmlFor="email">Email</label>
 <input className="border border-amber-700 mt-2 mb-4 p-2 rounded-md" type="email" name="email" id="email"/>
 <label className='text-amber-800' htmlFor="password">Password</label>
 <input className="border border-amber-700 mt-2 mb-4 p-2 rounded-md" type="password" name="password" id="password"/>
-<button className="bg-amber-800 text-white rounded-md p-2 font-bold">Login</button>
+<button className="bg-amber-800 text-white rounded-md p-2 font-bold">LOGIN</button>
+<Link className='flex justify-end items-end underline underline-offset-1 mt-4 text-green-600' to={'/signup'} >Sign in click here</Link>
 </form>
 </section>
 </main>
