@@ -1,7 +1,6 @@
 {
   "name": "my-project",
   "private": true,
-  "homepage": "/org/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
